@@ -1,4 +1,3 @@
-using Moq;
 using PokemonChallenge.HttpServices;
 using PokemonChallenge.Models;
 
