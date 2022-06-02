@@ -24,13 +24,13 @@ namespace PokemonChallenge.Test
             descriptionResponse.FlavorTextEntries = new List<FlavorTextResponse>{ new FlavorTextResponse(){ FlavorText = "some-description", Language = new LanguageResponse(){Language = "en"}}};
             configurationMock.Setup(x => x.PokemonDescriptionApiUrl).Returns("description-url");
             configurationMock.Setup(x => x.Locale).Returns("en");
-            httpClientMock.Setup(x => x.SendAsync<PokemonDescriptionResponse>(It.IsAny<HttpMethod>(), It.IsAny<string>())).ReturnsAsync(descriptionResponse);
+            httpClientMock.Setup(x => x.GetAsync<PokemonDescriptionResponse>(It.IsAny<string>())).ReturnsAsync(descriptionResponse);
 
             var result = await service.GetDescriptionAsync("pokemon-name");
 
             Assert.Equal("some-description", result);
 
-            httpClientMock.Verify(x => x.SendAsync<PokemonDescriptionResponse>(HttpMethod.Get, "description-url/pokemon-name"));
+            httpClientMock.Verify(x => x.GetAsync<PokemonDescriptionResponse>("description-url/pokemon-name"));
         }
 
         [Fact]
@@ -39,13 +39,13 @@ namespace PokemonChallenge.Test
             var spriteResponse = new PokemonSpriteResponse();
             spriteResponse.Sprites = new SpriteResponse() {FrontDefault = "pokemon-sprite"};
             configurationMock.Setup(x => x.PokemonSpriteApiUrl).Returns("sprite-url");
-            httpClientMock.Setup(x => x.SendAsync<PokemonSpriteResponse>(It.IsAny<HttpMethod>(), It.IsAny<string>())).ReturnsAsync(spriteResponse);
+            httpClientMock.Setup(x => x.GetAsync<PokemonSpriteResponse>(It.IsAny<string>())).ReturnsAsync(spriteResponse);
 
             var result = await service.GetPokemonSpriteAsync("pokemon-name");
 
             Assert.Equal("pokemon-sprite", result);
 
-            httpClientMock.Verify(x => x.SendAsync<PokemonSpriteResponse>(HttpMethod.Get, "sprite-url/pokemon-name"));
+            httpClientMock.Verify(x => x.GetAsync<PokemonSpriteResponse>("sprite-url/pokemon-name"));
         }
     }
 }

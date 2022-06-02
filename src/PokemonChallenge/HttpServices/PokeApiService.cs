@@ -16,7 +16,7 @@ namespace PokemonChallenge.HttpServices
         public async Task<string> GetDescriptionAsync(string pokemonName)
         {
             var url = $"{configuration.PokemonDescriptionApiUrl}/{pokemonName}";
-            var pokemonDescriptionResponse = await httpClient.SendAsync<PokemonDescriptionResponse>(HttpMethod.Get, url);
+            var pokemonDescriptionResponse = await httpClient.GetAsync<PokemonDescriptionResponse>(url);
             
             var firstFlavorTextResponse = pokemonDescriptionResponse.FlavorTextEntries.Where(x => x.Language.Language == configuration.Locale).First();
             return firstFlavorTextResponse.FlavorText;
@@ -26,7 +26,7 @@ namespace PokemonChallenge.HttpServices
         {
             var url = $"{configuration.PokemonSpriteApiUrl}/{pokemonName}";
 
-            var pokemonSpriteResponse = await httpClient.SendAsync<PokemonSpriteResponse>(HttpMethod.Get, url);
+            var pokemonSpriteResponse = await httpClient.GetAsync<PokemonSpriteResponse>(url);
 
             return pokemonSpriteResponse.Sprites.FrontDefault;
         }
