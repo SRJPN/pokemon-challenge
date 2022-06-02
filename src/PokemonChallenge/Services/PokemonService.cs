@@ -20,7 +20,7 @@ namespace PokemonChallenge.Services
             var sprite = await pokeApiService.GetPokemonSpriteAsync(pokemonName);
             var translatedDescription = await translationService.GetTranslationAsync(description);
 
-            return new Pokemon { Name = pokemonName, Sprite = sprite, Description = translatedDescription };
+            return new Pokemon { Name = pokemonName, Sprite = sprite, Description = description };
         }
     }
 }

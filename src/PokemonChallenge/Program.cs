@@ -39,7 +39,7 @@ void ConfigureServices(IServiceCollection services, ConfigurationManager configu
 {
     services.AddTransient<IApiConfiguration>(_ => configurationManager.GetSection("Application").Get<ApiConfiguration>());
     services.AddTransient<IPokemonService, PokemonService>();
-    services.AddTransient<IPokeApiService, PokeApiService>();
+    services.AddTransient<IPokeApiService, PokiApiClientService>();
     services.AddTransient<ITranslationService, ShakespeareTranslationService>();
     services.AddTransient<IHttpClient, HttpClientWrapper>();
 }
