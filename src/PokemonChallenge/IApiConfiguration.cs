@@ -5,5 +5,6 @@ namespace PokemonChallenge
         string PokemonDescriptionApiUrl { get; }
         string PokemonSpriteApiUrl { get; }
         string Locale { get; }
+        string ShakespeareTranslationApiUrl { get; }
     }
 }
