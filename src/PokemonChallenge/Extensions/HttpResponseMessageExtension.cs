@@ -1,4 +1,5 @@
-using Newtonsoft.Json;
+
+using System.Text.Json;
 
 namespace PokemonChallenge.Extensions
 {
@@ -9,9 +10,9 @@ namespace PokemonChallenge.Extensions
             var json = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<T>(json);
+                return JsonSerializer.Deserialize<T>(json);
             }
-            return default(T);
+            throw new Exception("Pokemon not found");
         }
     }
 }
