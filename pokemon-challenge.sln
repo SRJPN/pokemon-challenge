@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89D78C43-9AC5-435F-B563-96D894AE6C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonChallenge", "src\PokemonChallenge\PokemonChallenge.csproj", "{351FD3E3-8D94-47A1-A3B8-697CCDD1D9E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{542FE61C-6DAD-4E78-BCB0-1C70DF495C5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonChallenge.Test", "test\PokemonChallenge.Test\PokemonChallenge.Test.csproj", "{6FBBEE06-DD59-4D30-90E3-0CFBAA5639BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{351FD3E3-8D94-47A1-A3B8-697CCDD1D9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351FD3E3-8D94-47A1-A3B8-697CCDD1D9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351FD3E3-8D94-47A1-A3B8-697CCDD1D9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351FD3E3-8D94-47A1-A3B8-697CCDD1D9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FBBEE06-DD59-4D30-90E3-0CFBAA5639BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FBBEE06-DD59-4D30-90E3-0CFBAA5639BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FBBEE06-DD59-4D30-90E3-0CFBAA5639BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FBBEE06-DD59-4D30-90E3-0CFBAA5639BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{351FD3E3-8D94-47A1-A3B8-697CCDD1D9E9} = {89D78C43-9AC5-435F-B563-96D894AE6C68}
+		{6FBBEE06-DD59-4D30-90E3-0CFBAA5639BD} = {542FE61C-6DAD-4E78-BCB0-1C70DF495C5C}
+	EndGlobalSection
+EndGlobal
