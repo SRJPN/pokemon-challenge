@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PokemonChallenge\PokemonChallenge.csproj" />
+    <ProjectReference Include="..\PokemonChallenge\PokemonChallenge.csproj" />
   </ItemGroup>
 
 </Project>

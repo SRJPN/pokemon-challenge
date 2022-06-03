@@ -38,6 +38,7 @@ app.Run();
 void ConfigureServices(IServiceCollection services, ConfigurationManager configurationManager)
 {
     services.AddTransient<IApiConfiguration>(_ => configurationManager.GetSection("Application").Get<ApiConfiguration>());
+    services.AddTransient<IPokiApiClient, PokiApiClientWrapper>();
     services.AddTransient<IPokemonService, PokemonService>();
     services.AddTransient<IPokeApiService, PokiApiClientService>();
     services.AddTransient<ITranslationService, ShakespeareTranslationService>();
