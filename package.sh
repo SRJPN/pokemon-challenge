@@ -1,0 +1,1 @@
+zip -r pokemon-challenge.zip ./  -x "*/bin/*" -x "*obj*" -x "*node_modules*"
