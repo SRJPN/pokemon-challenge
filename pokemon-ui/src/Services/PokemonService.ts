@@ -1,12 +1,15 @@
+import axios from "axios";
+import { Pokemon } from "../Models/Pokemon";
+
 export class PokemonService {
   public async getPokemon(pokemonName: string) {
-    return fetch(`pokemon/${pokemonName}`, {
+    return axios.get(`pokemon/${pokemonName}`, {
       headers: {
         "Content-Type": "application/json",
       },
     }).then((x) => {
-      if (x.ok) {
-        return x.json();
+      if (x.status === 200) {
+        return x.data as Pokemon
       }
       throw new Error("Pokemon not found");
     });
