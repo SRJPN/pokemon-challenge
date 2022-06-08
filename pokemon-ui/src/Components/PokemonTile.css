@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    width: 50rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    background-color: white;
+    padding: .5rem;
+    flex-direction: row;
+}
+
+.card-body {
+    align-items: flex-start;
+    text-align: left;
+
+}
+.card-body .card-title {
+    font-size: xx-large;
+    text-transform: capitalize
+}
