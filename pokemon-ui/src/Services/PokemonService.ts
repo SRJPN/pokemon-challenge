@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from "./axios";
 import { Pokemon } from "../Models/Pokemon";
 
 export class PokemonService {
-  public async getPokemon(pokemonName: string) {
+  static async getPokemon(pokemonName: string) {
     return axios.get(`pokemon/${pokemonName}`, {
       headers: {
         "Content-Type": "application/json",

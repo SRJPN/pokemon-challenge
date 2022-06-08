@@ -10,7 +10,7 @@ const PokemonList = ({ pokemonName }: { pokemonName: string }) => {
 
   useEffect(() => {
     if (pokemonName)
-      new PokemonService()
+      PokemonService
         .getPokemon(pokemonName)
         .then((retrivedPokemon) => {
           setIsError(false);
