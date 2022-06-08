@@ -1,5 +1,44 @@
 Pokemon Challenge
 =================
+# Getting Started
+
+## Prerequisites
+
+Requirements for the software and other tools to build, test and run the application.
+
+* [Dotnet](https://dotnet.microsoft.com/en-us/download)
+* [Nodejs](https://nodejs.org/en/download/)
+* [Docker](https://www.docker.com/)
+
+## Running Tests
+
+There are seperate unit tests for both backend and frontend. 
+### Backend
+
+For backend, the tests are organised into `PokemonChallenge.Test` project. The test used `xunit` framework. To run backend tests. Run
+
+``` bash
+dotnet test
+```
+
+### Frontend
+
+For frontend the tests uses both `react-testing-library` and `jest`. To run the frontend test,
+
+``` bash
+cd pokemon-ui
+npm test
+```
+
+## Running the application
+
+The project has been initialized with Docker. To run the project
+
+``` bash
+docker-compose up
+```
+
+The api is run on port `8080` and the ui is run on `3000`. To explore the app navigate to `http://localhost:3000` and search by pokemon name.
 
 # Challenge
 
