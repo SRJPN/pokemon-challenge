@@ -4,6 +4,8 @@ using PokemonChallenge.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://::8080");
+
 // add configuration file
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 

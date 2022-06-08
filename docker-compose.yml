@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  ui:
+    build:
+      context: ./pokemon-ui
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+  api:
+    build:
+      context: ./PokemonChallenge
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    
