@@ -14,16 +14,12 @@ namespace PokemonChallenge.Services
             this.translationService = translationService;
         }
 
-        public async Task<Pokemon?> GetPokemonAsync(string pokemonName)
+        public async Task<Pokemon> GetPokemonAsync(string pokemonName)
         {
-            // var description = await pokeApiService.GetDescriptionAsync(pokemonName);
-            // var sprite = await pokeApiService.GetPokemonSpriteAsync(pokemonName);
-            // // var translatedDescription = await translationService.GetTranslationAsync(description);
-            if(pokemonName == "charizard") {
-                return new Pokemon { Name = "charizard", Sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png", Description = "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally." };
-
-            }
-            return null;
+            var description = await pokeApiService.GetDescriptionAsync(pokemonName);
+            var sprite = await pokeApiService.GetPokemonSpriteAsync(pokemonName);
+            var translatedDescription = await translationService.GetTranslationAsync(description);
+            return new Pokemon() { Name = pokemonName, Description = translatedDescription, Sprite = sprite };
         }
     }
 }
